@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Home</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            width: 300px;
+        }
+
+        .input-field label {
+            width: 100px;
+            margin-right: 10px;
+        }
+
+        .input-field input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            flex: 1;
+        }
+
+        .logout {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logout">
+        <form action="/users/logout" method="post" id="logoutForm">
+            <input type="hidden" name="Authentication-Info" value="eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzaHViaGFicmF0YS5yQGdtYWlsLmNvbSIsInJvbGVzIjpbIkFETUlOIl0sImlzcyI6IkhvbWVBdXRoU2VydmljZSIsIm5hbWUiOiJTaHViaGEgQnJhdGEgUm95IiwiZXhwIjoxNzE4MjYxMzA0LCJpYXQiOjE3MTc2NTY1MDR9.qxA71TQFnrqUMA16xHpIYOYbFOAIUIcnT6bUOFzlsjU">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    <h1>Welcome Home</h1>
+    <h2>Enter your credentials here to login</h2>
+    <form action="/users/login" method="post">
+        <div class="input-field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="input-field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+</div>
